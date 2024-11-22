@@ -2,3 +2,5 @@ This is a codecademy project with a real world application. The challenge was to
 * The arrays with the card numbs are the only things that were complete.
 * The function validateCred was created by me to iterate through any CC array using the Luhn method.
 * More about the Luhn algorithm: [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm#Description)
+* The project on Codecademy [CC_Validator](https://www.codecademy.com/projects/practice/credit-card-checker)
+
