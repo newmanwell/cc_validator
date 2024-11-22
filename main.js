@@ -26,7 +26,7 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 // Add your functions below:
 let result = [];
 
-function validateCred(array) {
+let validateCred = (array) => {
     for (let i = array.length -1; i >= 0 ; i--) {
       let dbl = array[i] * 2;
       if ((array.length - i) % 2 === 1) {
@@ -50,7 +50,7 @@ function validateCred(array) {
     }
   }
   
-  console.log(validateCred(mystery5));
+  console.log(validateCred(valid3));
   
 
 
