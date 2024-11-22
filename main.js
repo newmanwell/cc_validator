@@ -42,7 +42,7 @@ let validateCred = (array) => {
     let sum = result.reduce(
     (acc, cur) => acc + cur,
     0);
-    console.log(sum);
+    //console.log(sum);
     if (sum % 10 === 0) {
       return true;
     } else {
@@ -50,13 +50,20 @@ let validateCred = (array) => {
     }
   }
   
-  console.log(validateCred(valid3));
+  //console.log(validateCred(invalid5));
+
+  //iterate through nested array of credit cards
   
 
+  let findInvalidCards = (batchArray) => {
+    let invalidCC = [];
+    for (let i = 0; i < batchArray.length; i++) {
+      if (validateCred(batchArray[i]) === false) {
+        invalidCC.push(batchArray[i]);
+      }
+    }
+    return invalidCC;
+  }
 
-
-
-
-
-
-
+  console.log(findInvalidCards(batch));
+  
