@@ -39,14 +39,17 @@ let validateCred = (array) => {
         } 
       } 
     }
-    let sum = result.reduce(
-    (acc, cur) => acc + cur,
-    0);
-    //console.log(sum);
+    let sum = 0
+    for (let i = 0; i < result.length; i++) {
+      sum = sum += result[i];
+    }
+    // let sum = result.reduce(
+    // (acc, cur) => acc + cur, 0);
+    // console.log(sum);
     if (sum % 10 === 0) {
-      return true;
+      return 'valid';
     } else {
-      return false;
+      return 'invalid';
     }
   }
   
@@ -54,16 +57,37 @@ let validateCred = (array) => {
 
   //iterate through nested array of credit cards
   
-
-  let findInvalidCards = (batchArray) => {
-    let invalidCC = [];
+  let invalidCC = [];
+  function findInvalidCards(batchArray) {
     for (let i = 0; i < batchArray.length; i++) {
-      if (validateCred(batchArray[i]) === false) {
+      if (validateCred(batchArray[i]) === 'invalid') {
         invalidCC.push(batchArray[i]);
       }
     }
-    return invalidCC;
+    console.log(invalidCC);
   }
 
-  console.log(findInvalidCards(batch));
+  findInvalidCards(batch);
+  
+  // iterate over invalidCC array and return card issuer
+
+  // function idInvalidCardCompanies(batchArray) {
+  //   let invalidIssuers = [];
+  //   for (let i = 0; i < batchArray.length; i++) {
+  //     if (batchArray[i][0] === 3) {
+  //       invalidIssuers.push('Amex');
+  //     } else if (batchArray[i][0] === 4) {
+  //       invalidIssuers.push('Visa');
+  //     } else if (batchArray[i][0] === 5) {
+  //       invalidIssuers.push('MC');
+  //     } else if (batchArray[i][0] === 6) {
+  //       invalidIssuers.push('Discover');
+  //     } else {
+  //       console.log('Invalid Company');
+  //     }
+  //   }
+  //   return [invalidIssuers];
+  // }
+
+  // console.log(idInvalidCardCompanies(invalidCC));
   
