@@ -24,9 +24,19 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 
 // Add your functions below:
-let result = [];
+
+
+let userInput = () => {
+  const getNumber = document.getElementById('inputBox');
+  
+  for (let i = 0; i < getNumber.length; i++){
+    result.push(inputBox);
+  }
+  alert('Enter 15 or 16 digits');
+}
 
 let validateCred = (array) => {
+    let result = [];
     for (let i = array.length -1; i >= 0 ; i--) {
       let dbl = array[i] * 2;
       if ((array.length - i) % 2 === 1) {
@@ -45,7 +55,7 @@ let validateCred = (array) => {
     }
     // let sum = result.reduce(
     // (acc, cur) => acc + cur, 0);
-    // console.log(sum);
+    console.log(sum);
     if (sum % 10 === 0) {
       return 'valid';
     } else {
@@ -53,9 +63,9 @@ let validateCred = (array) => {
     }
   }
   
-  //console.log(validateCred(invalid5));
+  // console.log(validateCred(result));
 
-  //iterate through nested array of credit cards
+  // iterate through nested array of credit cards
   
   let invalidCC = [];
   function findInvalidCards(batchArray) {
@@ -71,23 +81,23 @@ let validateCred = (array) => {
   
   // iterate over invalidCC array and return card issuer
 
-  // function idInvalidCardCompanies(batchArray) {
-  //   let invalidIssuers = [];
-  //   for (let i = 0; i < batchArray.length; i++) {
-  //     if (batchArray[i][0] === 3) {
-  //       invalidIssuers.push('Amex');
-  //     } else if (batchArray[i][0] === 4) {
-  //       invalidIssuers.push('Visa');
-  //     } else if (batchArray[i][0] === 5) {
-  //       invalidIssuers.push('MC');
-  //     } else if (batchArray[i][0] === 6) {
-  //       invalidIssuers.push('Discover');
-  //     } else {
-  //       console.log('Invalid Company');
-  //     }
-  //   }
-  //   return [invalidIssuers];
-  // }
+  function idInvalidCardCompanies(batchArray) {
+    let invalidIssuers = [];
+    for (let i = 0; i < batchArray.length; i++) {
+      if (batchArray[i][0] === 3) {
+        invalidIssuers.push('Amex');
+      } else if (batchArray[i][0] === 4) {
+        invalidIssuers.push('Visa');
+      } else if (batchArray[i][0] === 5) {
+        invalidIssuers.push('MC');
+      } else if (batchArray[i][0] === 6) {
+        invalidIssuers.push('Discover');
+      } else {
+        console.log('Invalid Company');
+      }
+    }
+    return [invalidIssuers];
+  }
 
-  // console.log(idInvalidCardCompanies(invalidCC));
+  console.log(idInvalidCardCompanies(invalidCC));
   
