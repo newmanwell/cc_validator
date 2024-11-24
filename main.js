@@ -55,7 +55,7 @@ let validateCred = (array) => {
     }
     // let sum = result.reduce(
     // (acc, cur) => acc + cur, 0);
-    console.log(sum);
+    //console.log(result);
     if (sum % 10 === 0) {
       return 'valid';
     } else {
