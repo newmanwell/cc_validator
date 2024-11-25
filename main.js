@@ -25,13 +25,16 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 // Add your functions below:
 
+// grab data from the form
+
 const submit = document.getElementById('subButton');
 
 submit.onclick = function() {
-  let getNumber = document.getElementById('inputBox').value;
-  console.log(getNumber);
-  
-  alert('Enter 15 or 16 digits');
+  const getNumber = document.getElementById('inputBox').value;
+  const makeNumbers = Array.from(String(getNumber), Number);
+  validateCred(makeNumbers);
+  console.log(makeNumbers);
+  //alert('Enter 15 or 16 digits');
 }
 
 
@@ -50,17 +53,17 @@ let validateCred = (array) => {
         } 
       } 
     }
-    let sum = 0
-    for (let i = 0; i < result.length; i++) {
-      sum = sum += result[i];
-    }
-    // let sum = result.reduce(
-    // (acc, cur) => acc + cur, 0);
-    //console.log(result);
+    console.log(result);
+    // let sum = 0
+    // for (let i = 0; i < result.length; i++) {
+    //   sum = sum += result[i];
+    // }
+    let sum = result.reduce((acc, cur) => acc + cur, 0);
+    console.log(sum);
     if (sum % 10 === 0) {
-      return 'valid';
+      alert('valid card number');
     } else {
-      return 'invalid';
+      alert('invalid card number');
     }
   }
   
@@ -78,7 +81,7 @@ let validateCred = (array) => {
     console.log(invalidCC);
   }
 
-  findInvalidCards(batch);
+  //findInvalidCards(batch);
   
   // iterate over invalidCC array and return card issuer
 
@@ -100,5 +103,6 @@ let validateCred = (array) => {
     return [invalidIssuers];
   }
 
-  console.log(idInvalidCardCompanies(invalidCC));
+  //console.log(idInvalidCardCompanies(invalidCC));
   
+  // 4539677908016808
