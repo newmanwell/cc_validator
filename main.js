@@ -25,15 +25,16 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 // Add your functions below:
 
+const submit = document.getElementById('subButton');
 
-let userInput = () => {
-  const getNumber = document.getElementById('inputBox');
+submit.onclick = function() {
+  let getNumber = document.getElementById('inputBox').value;
+  console.log(getNumber);
   
-  for (let i = 0; i < getNumber.length; i++){
-    result.push(inputBox);
-  }
   alert('Enter 15 or 16 digits');
 }
+
+
 
 let validateCred = (array) => {
     let result = [];
