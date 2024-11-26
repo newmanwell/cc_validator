@@ -60,7 +60,9 @@ let validateCred = (array) => {
     // }
     let sum = result.reduce((acc, cur) => acc + cur, 0);
     console.log(sum);
-    if (sum % 10 === 0) {
+    if (result.length < 15 || result.length > 16) {
+      alert('enter 15 or 16 digits')
+    } else if (sum % 10 === 0) {
       alert('valid card number');
     } else {
       alert('invalid card number');
